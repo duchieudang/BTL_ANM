@@ -57,12 +57,12 @@
 							chữ ký</strong></label> <input type="text" name="signatureHash" id="signatureHash"
 						class="form-control" value="${signatureHash}" required>
 				</div>
-			
 				<div class="mb-3">
-					<label for="message" class="form-label"><strong>Nhập văn bản cần
-							 ký</strong></label> <input type="text" name="message" id="message"
-						class="form-control" value="${message}" required>
+					<textarea name="message" rows="5" id="message" class="form-control"
+						placeholder="Nhập nội dung cần ký ở đây..." required>${message}</textarea>
 				</div>
+
+	
 
 				<button type="submit" class="btn btn-success">Xác thực</button>
 			</form>
