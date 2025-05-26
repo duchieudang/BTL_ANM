@@ -59,7 +59,7 @@
 				</div>
 				<div class="mb-3">
 					<textarea name="message" rows="5" id="message" class="form-control"
-						placeholder="Nhập nội dung cần ký ở đây..." required>${message}</textarea>
+						placeholder="Nhập nội dung cần xác thựcthực ở đây..." required>${message}</textarea>
 				</div>
 
 	
