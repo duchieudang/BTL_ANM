@@ -13,9 +13,10 @@ def hash_message(message):
 
 
 def hash_signature(r, s):
-    sha1 = hashlib.sha1()
-    sha1.update((str(r) + str(s)).encode('utf-8'))
-    return sha1.hexdigest()
+    sha256 = hashlib.sha256()
+    sha256.update((str(r) + str(s)).encode('utf-8'))
+    return sha256.hexdigest()
+
 
 def calculate_g(p, q, h):
     return pow(h, (p - 1) // q, p)
@@ -211,7 +212,8 @@ class DSAGui:
         btn_frame.pack(pady=5)
         ttk.Button(btn_frame, text="📂 Mở file Word (.docx)", command=self.load_word_file).pack(side='left', padx=(0,5))
         ttk.Button(btn_frame, text="📂 Mở file PDF (.pdf)", command=lambda: self.load_pdf_file(self.verify_text_input)).pack(side='left', padx=(0,5))
-        ttk.Button(btn_frame, text="📂 Mở file Excel (.xlsx)", command=lambda: self.load_excel_file(self.text_input)).pack(side='left', padx=(0, 5))        
+        ttk.Button(btn_frame, text="📂 Mở file Excel (.xlsx)", command=lambda: self.load_excel_file(self.verify_text_input)).pack(side='left', padx=(0, 5))
+
         ttk.Button(btn_frame, text="👁️ Xem chi tiết", command=lambda: self.show_detail_popup(self.verify_text_input.get("1.0", tk.END))).pack(side='left')
 
         ttk.Label(frame, text="Hash chữ ký:").pack(anchor='w')
